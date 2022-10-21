@@ -1,0 +1,19 @@
+describe('Sistema de busca do Google', () => {
+  it('E ele acessa www.google.com', () => {
+    cy.visit('https://google.com')
+  })
+
+  it('E ele digita algo no campo de busca', () => {
+    cy.get('input[name=q]').type('reddit soyjack')
+  })
+
+  it('E ele clica no botão de busca', () => {
+    cy.get('form').submit()
+  })
+
+  it('Então quando ele clicar em imagens', () =>{
+    cy.get('h3').contains('soyjack')
+  })
+
+})
+
